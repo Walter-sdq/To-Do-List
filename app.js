@@ -52,12 +52,21 @@ function render() {
     todoList.innerHTML = ''
     todos.forEach(function (todos) {
         const todo = document.createElement('div')
+        const todo_list = document.createElement('p')
+        const todo_list_date = document.createElement('p')
         const delbtn = document.createElement('button')
+        const chkbx = document.createElement('input')
+        chkbx.type = 'checkbox'
+        chkbx.style = 'margin-left:10px;height: 44px;width: 20px;'
         delbtn.innerText = 'Remove item'
         delbtn.id = todos.id
-        todo.innerText = `${todos.title}  ${todos.due}`
+        todo_list.innerText = `${todos.title}`
+        todo_list_date.innerText = `${todos.due}`
         todoList.appendChild(todo)
+        todo.appendChild(todo_list)
+        todo.appendChild(todo_list_date)
         todo.appendChild(delbtn)
+        todo.appendChild(chkbx)
         delbtn.onclick = delTodo
 
     })
@@ -73,7 +82,7 @@ function addTodo() {
     })
     render()
     saveTodoList()
-    todo_title.value = '';duedate.value = ''
+    todo_title.value = ''; duedate.value = ''
 }
 
 function saveTodoList() {
