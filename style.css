@@ -39,13 +39,14 @@
     font-size: 1rem;
     border: 1.5px solid rgb(255, 166, 0);
     border-radius: 5px;
+    background: rgb(255 166 0 / 8%);
 }
 
-.todo_render>div button:hover{
+.todo_render>div button:hover {
     transition: .5s ease-out;
     color: red;
     border: 1.5px solid red;
-scale: 1.05;
+    scale: 1.05;
 }
 
 #todo-title {
@@ -73,4 +74,43 @@ scale: 1.05;
 
 .addTodo:hover {
     scale: 1.05;
+}
+
+.new_todo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: turquoise;
+
+    position: absolute;
+    bottom: 15%;
+    right: 10%
+}
+
+.new_todo>div {
+    background-color: white;
+    width: 5px;
+    height: 70%;
+}
+
+.new_todo div.hor {
+    transform: rotate(90deg);
+}
+
+@media(max-width:600px) {
+    .todoInner {
+        width: 90%;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    #duedate,
+    #todo-title {
+        width: 100%;
+        border: 1px solid gray;
+    }
 }
