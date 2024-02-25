@@ -56,6 +56,9 @@ function render() {
         const todo_list_date = document.createElement('p')
         const delbtn = document.createElement('button')
         const chkbx = document.createElement('input')
+
+        // ischeck = chkbx.value
+
         chkbx.type = 'checkbox'
         chkbx.style = 'margin-left:10px;height: 44px;width: 20px;'
         delbtn.innerText = 'Remove item'
@@ -88,4 +91,3 @@ function addTodo() {
 function saveTodoList() {
     localStorage.setItem('todos', JSON.stringify(todos))
 }
-

@@ -11,35 +11,44 @@
     align-items: center;
 }
 
-.todoInner{
+.todoInner {
     margin: 10px;
 }
 
-.controls{
+.controls {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
     margin-bottom: 1.5rem;
 }
-.todo_render{
 
-}
-.todo_render> div{
+.todo_render {}
+
+.todo_render>div {
     margin: 2rem 0;
     font-size: 18px;
-    text-transform:capitalize;
+    text-transform: capitalize;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.todo_render> div button{
-   padding: 10px;
-   font-size: 1rem;
-   border: 1.5px solid red;
-   border-radius: 5px;
+
+.todo_render>div button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1.5px solid rgb(255, 166, 0);
+    border-radius: 5px;
 }
-#todo-title{
+
+.todo_render>div button:hover{
+    transition: .5s ease-out;
+    color: red;
+    border: 1.5px solid red;
+scale: 1.05;
+}
+
+#todo-title {
     width: 200px;
     height: 40px;
     text-transform: capitalize;
@@ -48,13 +57,20 @@
     font-weight: 500;
     letter-spacing: 2px;
 }
-#duedate{
+
+#duedate {
     padding: 10px;
     font-size: 1rem;
     text-transform: uppercase;
 }
-.addTodo{
+
+.addTodo {
     padding: 10px;
     height: 44px;
     font-size: 1rem;
+    transition: .5s ease-out;
+}
+
+.addTodo:hover {
+    scale: 1.05;
 }
