@@ -1,9 +1,10 @@
 
 'use strict'
-
+const controls = document.querySelector('.controls')
 const todo_title = document.querySelector('#todo-title')
 const todoList = document.getElementById('todo_render')
 const duedate = document.getElementById('duedate')
+const new_todo = document.querySelector('.new_todo')
 
 
 let todos;
@@ -12,14 +13,9 @@ if (Array.isArray(savedTodos)) {
     todos = savedTodos
 } else {
     todos = [{
-        title: 'get yam',
-        due: '2021-03-04',
+        title: 'Build todo list',
+        due: '2024-02-20',
         id: 'id0'
-    },
-    {
-        title: 'get bread',
-        due: '2021-04-09',
-        id: 'id1'
     }]
 }
 
@@ -57,11 +53,13 @@ function render() {
         const delbtn = document.createElement('button')
         const chkbx = document.createElement('input')
 
+       
         // ischeck = chkbx.value
 
         chkbx.type = 'checkbox'
         chkbx.style = 'margin-left:10px;height: 44px;width: 20px;'
-        delbtn.innerText = 'Remove item'
+        chkbx.className = 'chkbx'
+        delbtn.innerText = 'Remove'
         delbtn.id = todos.id
         todo_list.innerText = `${todos.title}`
         todo_list_date.innerText = `${todos.due}`
@@ -69,7 +67,7 @@ function render() {
         todo.appendChild(todo_list)
         todo.appendChild(todo_list_date)
         todo.appendChild(delbtn)
-        todo.appendChild(chkbx)
+       todo.appendChild(chkbx)
         delbtn.onclick = delTodo
 
     })
@@ -83,6 +81,7 @@ function addTodo() {
         due: duedate.value,
         id: id
     })
+    
     render()
     saveTodoList()
     todo_title.value = ''; duedate.value = ''
@@ -91,3 +90,7 @@ function addTodo() {
 function saveTodoList() {
     localStorage.setItem('todos', JSON.stringify(todos))
 }
+
+ new_todo.addEventListener('click',()=>{
+            controls.style='display: flex'
+        })
