@@ -110,13 +110,19 @@
     .todo {
 
         padding: 1.5rem 0;
+        flex-direction: column
 
+    }
+    .banner{
+      font-size: 20px
     }
 
     .todo_render>div {
         font-size: 1rem;
     }
-
+.todo_render>div p:irst-child{
+  max-width: 106px
+}
     .chkbx {
         display: none;
     }
