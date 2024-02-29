@@ -9,8 +9,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    flex-direction: column
 
+}
+.banner {
+    font-size: 35px;
+    text-align: center;
+}
 .todoInner {
     margin: 10px;
 }
@@ -82,12 +87,12 @@
     justify-content: center;
     width: 30px;
     height: 30px;
-    background-color: turquoise;
+    background-color: rgb(37, 84, 238);
     display: none;
     position: absolute;
     bottom: 15%;
     right: 5%;
-    color:white;
+    color: white;
     font-size: 2rem;
 }
 
@@ -111,18 +116,18 @@
 
         padding: 1.5rem 0;
         flex-direction: column
-
     }
-    .banner{
-      font-size: 20px
+
+    .banner {
+        font-size: 20px;
+        text-align: center;
     }
 
     .todo_render>div {
-        font-size: 1rem;
+        font-size: 17px;
     }
-.todo_render>div p:irst-child{
-  max-width: 106px
-}
+
+
     .chkbx {
         display: none;
     }
@@ -131,10 +136,21 @@
         display: flex;
         cursor: pointer;
     }
-    .new_todo.new{
+
+    .new_todo.new {
         display: block;
     }
-    .controls{
+
+    .controls {
         display: none;
+    }
+}
+
+@media(max-width:400px) {
+    .todo_render>div {
+        font-size: 1rem;
+    }
+    .todo_render>div p:first-child {
+        max-width: 106px
     }
 }
