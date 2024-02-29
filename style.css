@@ -86,7 +86,7 @@
     display: none;
     position: absolute;
     bottom: 15%;
-    right: 10%;
+    right: 5%;
     color:white;
     font-size: 2rem;
 }
@@ -123,6 +123,7 @@
 
     .new_todo {
         display: flex;
+        cursor: pointer;
     }
     .new_todo.new{
         display: block;
