@@ -10,12 +10,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column
-
 }
+
 .banner {
     font-size: 35px;
     text-align: center;
 }
+
 .todoInner {
     margin: 10px;
 }
@@ -87,7 +88,7 @@
     justify-content: center;
     width: 30px;
     height: 30px;
-    background-color: rgb(37, 84, 238);
+    background-color: rgb(37, 84, 238 / 46%);
     display: none;
     position: absolute;
     bottom: 15%;
@@ -150,6 +151,7 @@
     .todo_render>div {
         font-size: 1rem;
     }
+
     .todo_render>div p:first-child {
         max-width: 106px
     }

@@ -26,15 +26,11 @@ function delTodo(event) {
     const delbtn = event.target
     const idToRemove = delbtn.id
 
-    console.log(event);
-
     todos = todos.filter(function (todos) {
 
         if (todos.id === idToRemove) {
             return false
-            console.log('hi');
         } else {
-            console.log('ki');
             return true
         }
     })
@@ -53,7 +49,7 @@ function render() {
         const delbtn = document.createElement('button')
         const chkbx = document.createElement('input')
 
-       
+
         // ischeck = chkbx.value
 
         chkbx.type = 'checkbox'
@@ -67,7 +63,7 @@ function render() {
         todo.appendChild(todo_list)
         todo.appendChild(todo_list_date)
         todo.appendChild(delbtn)
-       todo.appendChild(chkbx)
+        todo.appendChild(chkbx)
         delbtn.onclick = delTodo
 
     })
@@ -81,16 +77,34 @@ function addTodo() {
         due: duedate.value,
         id: id
     })
-    
+
     render()
     saveTodoList()
     todo_title.value = ''; duedate.value = ''
+
+    if (screen.width < 600) {
+        console.log('condition met');
+        setTimeout(() => {
+            new_todo.style = 'background-color: rgb(37 84 238 / 46%);transition: .5s ease-out'
+            controls.style = 'display: none'
+        }, 5000);
+    }
 }
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        addTodo()
+    }
+})
+
 
 function saveTodoList() {
     localStorage.setItem('todos', JSON.stringify(todos))
 }
 
- new_todo.addEventListener('click',()=>{
-            controls.style='display: flex'
-        })
+new_todo.addEventListener('click', () => {
+    controls.style = 'display: flex'
+    new_todo.style = 'background-color: rgb(37 84 238);transition: .5s ease-out'
+})
+
+new_todo.style = 'background-color: rgb(37 84 238 /46%);transition: .5s ease-out'
