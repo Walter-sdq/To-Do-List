@@ -1,5 +1,5 @@
-
 'use strict'
+
 const controls = document.querySelector('.controls')
 const todo_title = document.querySelector('#todo-title')
 const todoList = document.getElementById('todo_render')
