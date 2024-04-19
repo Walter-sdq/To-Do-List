@@ -5,7 +5,7 @@ const todo_title = document.querySelector('#todo-title')
 const todoList = document.getElementById('todo_render')
 const duedate = document.getElementById('duedate')
 const new_todo = document.querySelector('.new_todo')
-
+const line = document.querySelector('hr')
 
 let todos;
 const savedTodos = JSON.parse(localStorage.getItem('todos'))
@@ -87,6 +87,7 @@ function addTodo() {
         setTimeout(() => {
             new_todo.style = 'background-color: rgb(37 84 238 / 46%);transition: .5s ease-out'
             controls.style = 'display: none'
+            hr.style = 'display:none'
         }, 5000);
     }
 }
